@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-#      - name: Prepare system
-#        run: |
-#          pip install -r requirements.txt
+      - name: Git clone repo
+        uses: actions/checkout@v3
+      - name: Prepare system
+        run: |
+          pip install -r requirements.txt
       - name: Make migrations
         run: |
           python manage.py makemigrations
