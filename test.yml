@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Prepare system
+        run: |
+          pip install -r requirements.txt
       - name: Make migrations
         run: |
           python manage.py makemigrations
