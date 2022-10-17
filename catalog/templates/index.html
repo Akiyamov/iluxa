@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>iLuxa</h1>
+
+  <p>Добро пожаловать в <em>iLuxa</em>, сервис для напоминания о мечтах, существующих и утерянных.</p>
+
+<h2>Кратко по цифрам</h2>
+
+  <p>На данный момент мы записали:</p>
+  <ul>
+    <li><strong>Мечты:</strong> {{ num_idea }}</li>
+    <li><strong>Существующие:</strong> {{ num_live_idea }}</li>
+    <li><strong>Мертвые:</strong> {{ num_dead_idea }}</li>
+  </ul>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Список кала</h1>
+
+    {% if ilaksa_list %}
+    Название, описание, дата отсчета, дата окончания.
+    <ul>
+
+      {% for ilaksas in ilaksa_list %}
+      <li>
+        {{ilaksas.name}}, {{ ilaksas.descr }}, {{ ilaksas.date_start }}, {{ ilaksas.date_finish }}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Мечт нет. Так даже лучше.</p>
+    {% endif %} 
+{% endblock %}
