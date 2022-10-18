@@ -1,1 +1,1 @@
-web: gunicorn iluxa.wsgi
+web: gunicorn locallibrary.wsgi
