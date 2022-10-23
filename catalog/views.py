@@ -18,20 +18,22 @@ def index(request):
 
 from django.views import generic
 
-class ilaksaListView(generic.ListView):
+class LiveIdeaListView(generic.ListView):
     model = ilaksa
+    context_object_name = "ilaksa_list"
+    template_name = "ilaksa_list.html"
     def get_queryset(self):
         return ilaksa.objects.filter(status_idea='t')
 
-class ilaksdListView(generic.ListView):
+class DeadIdeaListView(generic.ListView):
     model = ilaksa
+    template_name = "ilaksd_list.html"
     def get_queryset(self):
         return ilaksa.objects.filter(status_idea='z')
 
 def ilaksa_new(request):
     if request.method == 'POST':
         form = CreateFrom(request.POST)
-        print(request.POST)
         if form.is_valid():
             form.save()
         return HttpResponseRedirect(reverse(index))

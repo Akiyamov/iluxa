@@ -1,1 +1,4 @@
 /Dockerfile
+catalog/__pycache__/
+db.sqlite3
+locallibrary/__pycache__/
